@@ -23,7 +23,7 @@ BUILD_ARGS="
 	--summary all \
 	--prefix ${APP_DIR} \
 	-Doptimize=ReleaseFast \
-	-Dcpu="${TARGET_ARCH}" \
+	-Dcpu=${TARGET_ARCH} \
 	-Dpie=true \
 	-Demit-docs \
 	-Dgtk-wayland=true \
