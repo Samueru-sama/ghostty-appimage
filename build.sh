@@ -12,11 +12,18 @@ PUB_KEY="RWQlAjJC23149WL2sEpT/l0QKy7hMIFhYdQOFy0Z7z7PbneUgvlsnYcV"
 UPINFO="gh-releases-zsync|$(echo "${GITHUB_REPOSITORY:-no-user/no-repo}" | tr '/' '|')|latest|*$ARCH.AppImage.zsync"
 APPDATA_FILE="${PWD}/assets/ghostty.appdata.xml"
 DESKTOP_FILE="${PWD}/assets/ghostty.desktop"
+
+if [ "$ARCH" = 'x86_64' ]; then
+	TARGET_ARCH='x86_64_v3'
+else
+	TARGET_ARCH='baseline'
+fi
+
 BUILD_ARGS="
 	--summary all \
 	--prefix ${APP_DIR} \
 	-Doptimize=ReleaseFast \
-	-Dcpu=baseline \
+	-Dcpu="${TARGET_ARCH}" \
 	-Dpie=true \
 	-Demit-docs \
 	-Dgtk-wayland=true \
