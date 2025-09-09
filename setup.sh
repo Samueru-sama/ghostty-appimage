@@ -47,7 +47,7 @@ esac
 # Install Debloated Pkgs
 wget "${DEBLOATED_PKGS}" -O /tmp/get-debloated-pkgs.sh
 chmod a+x /tmp/get-debloated-pkgs.sh
-sh /tmp/get-debloated-pkgs.sh --add-opengl --prefer-nano gtk4-mini libxml2-mini
+sh /tmp/get-debloated-pkgs.sh gtk4-mini libxml2-mini llvm-libs-nano
 
 # Download & install other dependencies
 # zig: https://ziglang.org
